@@ -1,0 +1,17 @@
+{
+  "name": "class-17-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^7.0.3",
+    "uuid": "^3.2.1"
+  }
+}

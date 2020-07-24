@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>WebSocket Playground</title>
+</head>
+
+<body>
+</body>
+<script>
+  const ws = new WebSocket('ws://localhost:3000/');
+  ws.onopen = function () {
+    console.log('WebSocket Client Connected');
+    ws.send('Hi this is web client.');
+  };
+
+  // Very cool that the ws protocol keeps us connected, so that we can
+  // get messages from the server at any time. Watch the console!
+  ws.onmessage = function (e) {
+    console.log("Received: '" + e.data + "'");
+  };
+</script>

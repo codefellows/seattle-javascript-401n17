@@ -1,0 +1,26 @@
+{
+  "name": "fetch",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "fetch": "index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-url": "^1.2.4",
+    "minimist": "^1.2.0",
+    "mongoose": "^5.8.11",
+    "superagent": "^5.2.1"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^25.1.0"
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "overview": {
+    "Overview": "/README.md",
+    "Facilitator's Guide": "/facilitator/README.md",
+    "Data Structures and Algorithms": "/facilitator/data-structures-and-algorithms.md"
+  },
+  "modules": [
+    {
+      "name": "Module 1: Node.js",
+      "overview": "/facilitator/module-1.md",
+      "courseLevel": 201,
+      "classes": [
+        {
+          "class": "01",
+          "name": "Node Ecosystem",
+          "assignments": {
+            "reading": "/curriculum/class-01/DISCUSSION.md",
+            "lab": "/curriculum/class-01/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-01/facilitator/README.md",
+            "demo prep": "/curriculum/class-01/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-01/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "02",
+          "name": "Classes, Inheritance, Functional Programming",
+          "assignments": {
+            "reading": "/curriculum/class-02/DISCUSSION.md",
+            "lab": "/curriculum/class-02/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-02/facilitator/README.md",
+            "demo prep": "/curriculum/class-02/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-02/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "03",
+          "name": "Data Modeling / NoSQL",
+          "assignments": {
+            "reading": "/curriculum/class-03/DISCUSSION.md",
+            "lab": "/curriculum/class-03/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-03/facilitator/README.md",
+            "demo prep": "/curriculum/class-03/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-03/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "04",
+          "name": "Advanced Mongo/Mongoose",
+          "assignments": {
+            "reading": "/curriculum/class-04/DISCUSSION.md",
+            "lab": "/curriculum/class-04/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-04/facilitator/README.md",
+            "demo prep": "/curriculum/class-04/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-04/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 2: APIs",
+      "overview": "/facilitator/module-2.md",
+      "classes": [
+        {
+          "class": "06",
+          "name": "APIs",
+          "assignments": {
+            "reading": "/curriculum/class-06/DISCUSSION.md",
+            "lab": "/curriculum/class-06/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-06/facilitator/README.md",
+            "demo prep": "/curriculum/class-06/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-06/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "07",
+          "name": "Express",
+          "assignments": {
+            "reading": "/curriculum/class-07/DISCUSSION.md",
+            "lab": "/curriculum/class-07/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-07/facilitator/README.md",
+            "demo prep": "/curriculum/class-07/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-07/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "08",
+          "name": "Express Routing, CRUD",
+          "assignments": {
+            "reading": "/curriculum/class-08/DISCUSSION.md",
+            "lab": "/curriculum/class-08/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-08/facilitator/README.md",
+            "demo prep": "/curriculum/class-08/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-08/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "09",
+          "name": "API Server",
+          "assignments": {
+            "reading": "/curriculum/class-09/DISCUSSION.md",
+            "lab": "/curriculum/class-09/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-09/facilitator/README.md",
+            "demo prep": "/curriculum/class-09/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-09/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 3: Authentication",
+      "overview": "/facilitator/module-3.md",
+      "classes": [
+        {
+          "class": "11",
+          "name": "Basic Authentication",
+          "assignments": {
+            "reading": "/curriculum/class-11/DISCUSSION.md",
+            "lab": "/curriculum/class-11/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-11/facilitator/README.md",
+            "demo prep": "/curriculum/class-11/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-11/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "12",
+          "name": "OAuth",
+          "assignments": {
+            "reading": "/curriculum/class-12/DISCUSSION.md",
+            "lab": "/curriculum/class-12/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-12/facilitator/README.md",
+            "demo prep": "/curriculum/class-12/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-12/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "13",
+          "name": "Bearer Authentication",
+          "assignments": {
+            "reading": "/curriculum/class-13/DISCUSSION.md",
+            "lab": "/curriculum/class-13/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-13/facilitator/README.md",
+            "demo prep": "/curriculum/class-13/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-13/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "14",
+          "name": "Access Control (ACL)",
+          "assignments": {
+            "reading": "/curriculum/class-14/DISCUSSION.md",
+            "lab": "/curriculum/class-14/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-14/facilitator/README.md",
+            "demo prep": "/curriculum/class-14/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-14/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 4: Realtime",
+      "overview": "/facilitator/module-4.md",
+      "classes": [
+        {
+          "class": "16",
+          "name": "Event Driven Applications",
+          "assignments": {
+            "reading": "/curriculum/class-16/DISCUSSION.md",
+            "lab": "/curriculum/class-16/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-16/facilitator/README.md",
+            "demo prep": "/curriculum/class-16/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-16/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "17",
+          "name": "TCP",
+          "assignments": {
+            "reading": "/curriculum/class-17/DISCUSSION.md",
+            "lab": "/curriculum/class-17/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-17/facilitator/README.md",
+            "demo prep": "/curriculum/class-17/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-17/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "18",
+          "name": "Socket.io",
+          "assignments": {
+            "reading": "/curriculum/class-18/DISCUSSION.md",
+            "lab": "/curriculum/class-18/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-18/facilitator/README.md",
+            "demo prep": "/curriculum/class-18/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-18/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "19",
+          "name": "Message Queues",
+          "assignments": {
+            "reading": "/curriculum/class-19/DISCUSSION.md",
+            "lab": "/curriculum/class-19/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-19/facilitator/README.md",
+            "demo prep": "/curriculum/class-19/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-19/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 5: React",
+      "overview": "/facilitator/module-5.md",
+      "classes": [
+        {
+          "class": "26",
+          "name": "Component Driven Design",
+          "assignments": {
+            "reading": "/curriculum/class-26/DISCUSSION.md",
+            "lab": "/curriculum/class-26/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-26/facilitator/README.md",
+            "demo prep": "/curriculum/class-26/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-26/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "27",
+          "name": "React Testing and Deployment",
+          "assignments": {
+            "reading": "/curriculum/class-27/DISCUSSION.md",
+            "lab": "/curriculum/class-27/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-27/facilitator/README.md",
+            "demo prep": "/curriculum/class-27/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-27/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "28",
+          "name": "Props and State",
+          "assignments": {
+            "reading": "/curriculum/class-28/DISCUSSION.md",
+            "lab": "/curriculum/class-28/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-28/facilitator/README.md",
+            "demo prep": "/curriculum/class-28/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-28/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "29",
+          "name": "Component Composition",
+          "assignments": {
+            "reading": "/curriculum/class-29/DISCUSSION.md",
+            "lab": "/curriculum/class-29/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-29/facilitator/README.md",
+            "demo prep": "/curriculum/class-29/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-29/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 6: Hooks and Context",
+      "overview": "/facilitator/module-6.md",
+      "classes": [
+        {
+          "class": "31",
+          "name": "Hooks API",
+          "assignments": {
+            "reading": "/curriculum/class-31/DISCUSSION.md",
+            "lab": "/curriculum/class-31/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-31/facilitator/README.md",
+            "demo prep": "/curriculum/class-31/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-31/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "32",
+          "name": "Custom Hooks",
+          "assignments": {
+            "reading": "/curriculum/class-32/DISCUSSION.md",
+            "lab": "/curriculum/class-32/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-32/facilitator/README.md",
+            "demo prep": "/curriculum/class-32/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-32/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "33",
+          "name": "Context API",
+          "assignments": {
+            "reading": "/curriculum/class-33/DISCUSSION.md",
+            "lab": "/curriculum/class-33/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-33/facilitator/README.md",
+            "demo prep": "/curriculum/class-33/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-33/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "34",
+          "name": "Login and Auth",
+          "assignments": {
+            "reading": "/curriculum/class-34/DISCUSSION.md",
+            "lab": "/curriculum/class-34/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-34/facilitator/README.md",
+            "demo prep": "/curriculum/class-34/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-34/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 7: Redux",
+      "overview": "/facilitator/module-7.md",
+      "classes": [
+        {
+          "class": "36",
+          "name": "Application State with Redux",
+          "assignments": {
+            "reading": "/curriculum/class-36/DISCUSSION.md",
+            "lab": "/curriculum/class-36/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-36/facilitator/README.md",
+            "demo prep": "/curriculum/class-36/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-36/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "37",
+          "name": "Combined Reducers",
+          "assignments": {
+            "reading": "/curriculum/class-37/DISCUSSION.md",
+            "lab": "/curriculum/class-37/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-37/facilitator/README.md",
+            "demo prep": "/curriculum/class-37/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-37/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "38",
+          "name": "Asynchronous Actions",
+          "assignments": {
+            "reading": "/curriculum/class-38/DISCUSSION.md",
+            "lab": "/curriculum/class-38/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-38/facilitator/README.md",
+            "demo prep": "/curriculum/class-38/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-38/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "39",
+          "name": "Additional Reduc Topics",
+          "assignments": {
+            "reading": "/curriculum/class-39/DISCUSSION.md",
+            "lab": "/curriculum/class-39/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-39/facilitator/README.md",
+            "demo prep": "/curriculum/class-39/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-39/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module 8: React Native & Other Frameworks",
+      "overview": "/facilitator/module-8.md",
+      "classes": [
+        {
+          "class": "41",
+          "name": "React Native",
+          "assignments": {
+            "reading": "/curriculum/class-41/DISCUSSION.md",
+            "lab": "/curriculum/class-41/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-41/facilitator/README.md",
+            "demo prep": "/curriculum/class-41/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-41/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "42",
+          "name": "React Native, Continued",
+          "assignments": {
+            "reading": "/curriculum/class-42/DISCUSSION.md",
+            "lab": "/curriculum/class-42/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-42/facilitator/README.md",
+            "demo prep": "/curriculum/class-42/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-42/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "43",
+          "name": "Gatsby, next.js, and other JS Frameworks",
+          "assignments": {
+            "reading": "/curriculum/class-43/DISCUSSION.md",
+            "lab": "/curriculum/class-43/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-43/facilitator/README.md",
+            "demo prep": "/curriculum/class-43/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-43/facilitator/LECTURE-EXAMPLE.md"
+          }
+        },
+        {
+          "class": "44",
+          "name": "Javascript Frameworks",
+          "assignments": {
+            "reading": "/curriculum/class-44/DISCUSSION.md",
+            "lab": "/curriculum/class-44/lab/README.md"
+          },
+          "facilitator": {
+            "guide": "/curriculum/class-44/facilitator/README.md",
+            "demo prep": "/curriculum/class-44/facilitator/DEMO.md",
+            "code demos": "",
+            "lecture example": "/curriculum/class-44/facilitator/LECTURE-EXAMPLE.md"
+          }
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "midterm": {
+        "facilitator": "/projects/midterm/facilitator/README.md",
+        "students": "/projects/midterm/README.md"
+      },
+      "final": {
+        "facilitator": "/projects/final/facilitator/README.md",
+        "students": "/projects/final/README.md"
+      }
+    }
+  ]
+}
