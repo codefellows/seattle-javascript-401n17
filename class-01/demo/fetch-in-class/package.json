@@ -1,0 +1,22 @@
+{
+  "name": "fetch",
+  "version": "0.0.1",
+  "description": "Command Line URL Fetcher",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "url",
+    "data",
+    "json",
+    "httpie",
+    "postman"
+  ],
+  "author": "John",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
