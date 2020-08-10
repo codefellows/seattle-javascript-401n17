@@ -4,9 +4,8 @@
 
 ### Author: John Cokos
 
-- [submission PR](https://github.com/tutuorial-401js/class-00)
-- [tests report](https://github.com/tutuorial-401js/class-00/actions)
-- [front-end](https://tutorial-401js.herokuapp.com/)
+- [tests report](https://github.com/codefellows/code-401-javascript-example-lab/actions)
+- [front-end](https://code-401-js-lab-example.herokuapp.com/status)
 
 ### Setup
 
@@ -32,9 +31,9 @@
 
 - Unit Tests: `npm run test`
 - Lint Tests: `npm run lint`
-- Assertions Made
-  - Assert that status() properly returns the appropriate object
 
 #### UML
 
-![UML Diagram](whiteboard.png)
+(Created with [diagrams](https://app.diagrams.net/))
+
+![UML Diagram](uml.png)
