@@ -1,0 +1,14 @@
+{
+  "name": "shredder",
+  "version": "0.0.1",
+  "description": "Shredder Library",
+  "main": "shredder.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "author": "401n17",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^26.4.0"
+  }
+}
