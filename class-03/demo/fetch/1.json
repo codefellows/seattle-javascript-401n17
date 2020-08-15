@@ -1,0 +1,18 @@
+{
+  "id": "lasdkjffldj",
+  "address": {
+    "street": "lsdkfjdfls"
+  },
+  "orders": {
+    "123": [
+      {
+        "item": "12345",
+        "description": "TV",
+        "price": 799
+      }
+    ]
+  }
+}
+
+POSTGRE -- postgres: //localhost:5432
+MONGO -- mongodb: //localhost:27017

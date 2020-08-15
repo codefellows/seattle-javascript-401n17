@@ -1,5 +1,8 @@
 'use strict';
 
+const helperFunctions = require('./helpers.js');
+
+
 const $$ = module.exports = {};
 
 $$.map = (input, callback) => {
@@ -27,6 +30,14 @@ $$.map = (input, callback) => {
     return undefined;
   }
 }
+
+$$.filter = (input, callback) => {
+  let type = $$.whatIs(input);
+  if (type === "array") { return helperFunctions.filterArray(input, callback); }
+  else if (type === "object") { return helperFunctions.filterObject(input, callback) }
+}
+
+
 
 $$.whatIs = (thing) => {
   if (Array.isArray(thing)) { return 'array'; }

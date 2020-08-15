@@ -60,4 +60,31 @@ describe('shredder library', () => {
 
   });
 
+  it('can filter an array', () => {
+    let input = [1, 2, 3, 4, 5, 6];
+    let expected = [2, 4, 6];
+    let callback = (val, idx) => val % 2 === 0;
+    let actual = $$.filter(input, callback);
+    expect(actual).toStrictEqual(expected);
+  });
+
+  it('can filter an object', () => {
+    let input = {
+      sunny: false,
+      temp: 80,
+      wind: 'gusty'
+    }
+    let expected = {
+      temp: 80
+    };
+
+    let callback = (key, val) => key === "temp";
+
+    // given that this is an object, does it properly call helperFunctions.filterObject?
+    let actual = $$.filter(input, callback);
+
+    expect(actual).toStrictEqual(expected);
+
+  })
+
 });
