@@ -32,6 +32,10 @@ class FoodDemo {
     }
   }
 
+  async delete(id) {
+    await Food.findByIdAndRemove(id);
+  }
+
   async list() {
     try {
       let allFoods = await Food.find({ type: "vegetable" });
@@ -44,8 +48,12 @@ class FoodDemo {
 
 async function doFoodStuff() {
   let code = new FoodDemo();
-  await code.add();
+  // await code.add();
+
+  code.delete('5f3852310ca8a93048a00212');
+
   await code.list();
+
 }
 
 doFoodStuff()
