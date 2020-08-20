@@ -21,19 +21,15 @@ describe('Food Model', () => {
 
   })
 
-  it('can .get() a record', () => {
+  it('can .get() a record', async () => {
     const item = {
       name: 'test food 2',
       calories: 10,
       type: "meat"
     };
 
-    return food.post(item)
-      .then(record => {
-        food.get(record.id)
-          .then(foundRecord => {
-            expect(foundRecord._id).toEqual(record.id);
-          })
-      })
+    const record = await food.post(item)
+    const found = await food.get(record.id)
+    expect(found._id).toEqual(record._id);
   })
 })
