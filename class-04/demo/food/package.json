@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@code-fellows/supergoose": "^1.0.7",
+    "@code-fellows/supergoose": "^1.0.11",
     "dotenv": "^8.2.0",
     "jest": "^26.4.0",
     "minimist": "^1.2.5",
