@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "base-64": "^0.1.0",
-    "bcrypt": "^3.0.7"
+    "bcrypt": "^5.0.0"
   }
 }
