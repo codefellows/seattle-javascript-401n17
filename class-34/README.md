@@ -22,3 +22,38 @@ Today, we will combine Authentication (valid user is logged in) and Authorizatio
 ## Today's Outline
 
 <!-- To Be Completed By Instructor -->
+
+## Notes
+
+### Implementing RBAC with Conditional Rendering
+
+What problems do we need to solve for?
+
+- Is this a valid user (are they logged in)?
+- What is the user authorized to do?
+  - Which parts of our application care about this?
+  - How can we determine this?
+    - What's in the token?
+    - Contact between the UI and the API
+- How do we make this easy to use?
+
+### Proposal
+
+`<Auth />` component
+
+- Based on your permissions and login status, it either gives you access to a component or jsx or hides it.
+- When you are authenticated, `props.children` renders, otherwise, null
+- With a capability prop ... if you are authenticated AND have the right permissions, `props.children` renders, otherwise, null
+- Can another conditional rendering component help us within the `<Auth />` component?
+
+```javascript
+// The div only shows if you are logged in
+  <Auth>
+    <div />
+  </Auth>
+
+// The div only shows if you are logged in AND have read permissions
+  <Auth capability="read">
+    <div />
+  </Auth>
+```

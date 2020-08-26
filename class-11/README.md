@@ -22,3 +22,43 @@ Today, we'll be looking at ways to create an account and securely authenticate a
 ## Today's Outline
 
 <!-- To Be Completed By Instructor -->
+
+## Notes
+
+### Basic Authorization
+
+Basic Authorization is a common method used to send a username and password in an HTTP request. The username and password are joined with a ':' then "base64 encoded" and placed after the string 'Basic '. The resulting string is set to the value of an Authorization header.
+
+A Server can decode the Basic Authorization header to retrieve the username and password. If the combination is validated, the server generally responds back to the client with some sort of validation response (token or key) so that the client can re-authenticate without having to continually send the username:password combination in plain text over the internet.
+
+> NOTE: base64 encoding is not a form of encryption. The client and server must use HTTPS to protect the username and password as it travels across the network.
+
+In browsers, we get `atob` and `btoa` to convert to/from "Base64 Encoding"
+
+``` javascript
+let encoded = window.btoa('someusername:P@55w0rD!')
+// c29tZXVzZXJuYW1lOlBANTV3MHJEIQ==
+
+let decoded = window.atob('c29tZXVzZXJuYW1lOlBANTV3MHJEIQ==');
+// someusername:P@55w0rD!
+
+request({
+  method: 'GET',
+  url: 'https://api.example.com/login',
+  headers: {
+    Authorization: `Basic ${encoded}`,
+  },
+})
+.then(handleLogin)
+.catch(handleLoginError)
+```
+
+In a node application, we can use a node module to do the same work (those methods are not built-in)
+
+```javascript
+let base64 = require('base-64');
+
+let string = 'someusername:P@55w0rD!';
+let encoded = base64.encode(string); // c29tZXVzZXJuYW1lOlBANTV3MHJEIQ==
+let decoded = base64.decode(encoded); // someusername:P@55w0rD!
+```

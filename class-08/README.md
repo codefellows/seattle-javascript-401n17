@@ -19,3 +19,58 @@ Express servers can quickly get big and out of control if you build them in one 
 ## Today's Outline
 
 <!-- To Be Completed By Instructor -->
+
+## Notes
+
+### Route Modules
+
+- Normal node modules
+- Require express just like your server
+- Instantiate `express.router` instead of `express()`
+- Export the route definitions
+- The main server/app should require your route an then `use()` them
+  - The server can prefix imported routes
+
+#### Router
+
+```javascript
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/mystuff', (req,res) => {
+  const out = {
+    fromParam: req.params.color,
+    fromReq: req.color,
+  };
+  res.send(out);
+});
+
+module.exports = router;
+```
+
+#### Server
+
+```javascript
+const express = require('express');
+const app = express();
+
+const customRoutes = require('./routes.js');
+
+app.use(customRoutes);
+```
+
+### Route Prefixes
+
+When you `use()` a router, you can prefix all of it's routes from the server.  In this example, we've prefixed the custom routes module with **/custom**, which means that calls to <http://servername.com/mystuff> will no longer work as before. You'll now have to use <http://servername.com/custom/mystuff>
+
+```javascript
+const express = require('express');
+const app = express();
+
+const customRoutes = require('./routes.js');
+
+// now, routes in the routes file will only work if /custom is in front of them.
+app.use('/custom', customRoutes);
+
+```

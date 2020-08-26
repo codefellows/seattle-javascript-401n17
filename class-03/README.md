@@ -29,6 +29,8 @@ Data Modeling: The process of taking a real world or conceptual idea and encodin
 
 <!-- To Be Completed By Instructor -->
 
+## Notes
+
 ### MongoDB Shell Commands
 
 | Command                  | Description                                                                 |
