@@ -1,0 +1,17 @@
+{
+  "name": "test-servers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "express": "^4.17.1",
+    "jest": "^26.4.2"
+  }
+}
