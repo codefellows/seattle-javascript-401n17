@@ -1,0 +1,18 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "author": "John",
+  "license": "MIT",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.4.2",
+    "mongo": "^0.1.0"
+  }
+}
