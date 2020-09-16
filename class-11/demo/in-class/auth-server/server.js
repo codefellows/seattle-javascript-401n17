@@ -42,7 +42,7 @@ app.post('/signup', async (req, res, next) => {
 
 });
 
-app.post('/signin', basicAuth, async (req, res, next) => {
+app.post('/signin', async (req, res, next) => {
 
   try {
     // Get the username and password from the user
