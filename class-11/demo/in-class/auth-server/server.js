@@ -1,8 +1,9 @@
 'use strict';
 
 const express = require('express');
-const users = require('./users-model.js');
-const base64 = require('base-64');
+const users = require('./auth/models/users-model.js');
+const basicAuth = require('./auth/middleware/basic.js');
+const basic = require('./auth/middleware/basic.js');
 
 const app = express();
 
@@ -42,29 +43,20 @@ app.post('/signup', async (req, res, next) => {
 
 });
 
-app.post('/signin', async (req, res, next) => {
+// adding ,basicAuth does?
+app.post('/signin', basicAuth, (req, res, next) => {
 
-  try {
-    // Get the username and password from the user
-    // It will be in the headers
-    let authorization = req.headers.authorization;
-    let encoded = authorization.split(' ')[1]
-    let creds = base64.decode(encoded);
-    let [username, password] = creds.split(":");
-
-    // Get user instance from the model, if we can.
-    let userRecord = await users.validateBasic(username, password);
-
-    // If it's good, send a token
-    let token = userRecord.generateToken();
-
-    res.status(201).send(token);
-
-  } catch (e) {
-    next(e.message);
+  let output = {
+    user: req.user,
+    token: req.token
   }
+  res.status(200).json(output);
 
 });
+
+app.get('/secretstuff', basicAuth, (req, res) => {
+  res.send('hi');
+})
 
 // 404 / not found handler
 app.use('*', (req, res, next) => {

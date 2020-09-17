@@ -28,6 +28,7 @@ module.exports = async (req, res, next) => {
     req.user = userRecord;
 
     next();
+    // res.status(201).send(token);
 
   } catch (e) {
     console.log(e)
