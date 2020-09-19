@@ -1,12 +1,14 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const authRoutes = require('./auth/routes/auth-router.js')
 const testRoutes = require('./test-routes.js');
 
 const app = express();
 
 // global middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
