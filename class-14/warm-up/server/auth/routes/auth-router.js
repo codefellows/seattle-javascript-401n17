@@ -26,7 +26,11 @@ router.post('/signup', async (req, res, next) => {
     let token = record.generateToken();
 
     res.set('auth', req.token);
-    res.status(200).send(`Hello, ${newUser.username}`)
+    let object = {
+      token: req.token,
+      user: newUser
+    }
+    res.status(200).json(object);
 
 
   } catch (e) {
@@ -38,10 +42,14 @@ router.post('/signup', async (req, res, next) => {
 // adding ,basicAuth does?
 router.post('/signin', basicAuth, (req, res, next) => {
   res.set('auth', req.token);
-  res.status(200).send(`Hello, ${req.user.username}`)
+  let object = {
+    token: req.token,
+    user: req.user
+  }
+  res.status(200).json(object);
 });
 
-router.get('/test', bearer, (req, res) => {
+router.get('/secret', bearer, (req, res) => {
   res.status(200).send(`Welcome, ${req.user.username}`)
 })
 
