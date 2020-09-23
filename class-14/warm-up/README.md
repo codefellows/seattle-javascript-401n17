@@ -1,59 +1,59 @@
-# Warm Up - Shredder Event Listeners
+# Warm Up - Auth Server Review
 
-Now that we can find DOM elements, add event listeners so that we can respond to users intent
+Create a new repository for this workshop, called `auth-server-workshop`
 
-## Challenge: Event Listeners
+## Target Operations for this server:
 
-Given an element that the `$$()` has found, add event listeners to it for any valid DOM event, such as 'click', 'mouseover', etc.
+### Auth System:
 
-- Add an `on` prototype methods to your `DOMList` constructor
-  - Accepts 2 parameters
-    - The `event` name to listen for
-    - The `callback` to run
-  - When running the callback, always send the `$$(element)` so that the callback can reference the element that the event is running on.
+- POST to `/signup` with a `username` and `password`
+  - Add the user to the database
+  - Set an 'auth' header with the token
+  - Say "Hello" to the user
+- POST to `/signin` with a username and password using Basic Auth
+  - Set an 'auth' header with the token
+  - Say "Hello" to the user
+  - Returns "Invalid Login" if the username/password is incorrect
+- GET to `/test` with a Bearer Authorization header, with a valid token
+  - Say "Hello" to the user
+  - Returns "Invalid Login" if the token is not valid
 
-HTML:
+### API
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>$$</title>
-  </head>
-  <body>
-    <button>Test Button 1</button>
-    <button>Test Button 2</button>
-    <p>some words here</p>
-    <script src="shredder.js"></script>
-    <script src="app.js"></script>
-  </body>
-</html>
-```
+- POST to `/api/v1/todo` with the fields: text, assignee
+  - Adds item to the database
+  - Displays a new To Do Item, with an ID
+- GET to `/api/v1/todo'
+  - Returns an object with a count property and a results array
+- GET to `/api/v1/todo/ID'
+  - Given a valid ID
+    - Returns an object with one to do item
+- PUT to `/api/v1/todo/ID' with an object containing new values
+  - Given a valid ID
+    - Updates the record in the database
+    - Returns an object with one to do item updated
+- DELETE to `/api/v1/todo/ID'
+  - Given a valid ID
+    - Deletes the item in the database
+    - Returns the object deleted
+    - Subsequent get should show the object removed
 
-JavaScript (app.js)
+## Find the Bugs
 
-```javascript
-// Show all the buttons
-let paragraph = $$('p');
-let buttons = $$('button');
+The server has many catastrophic issues. Please identify and fix
 
-paragraph.on('mouseover', (element) => {
-  console.log('Get off my lawn!');
-})
+Note:
 
-buttons.on('click', (element) => {
-  console.log('Clicked on the button:', element.text())
-})
+- Bug File and Line Number
+- RCA for each bug
+  - Root Cause Analysis
+    - What was the problem?
+    - How did you find it?
+    - What was the impact?
+    - How did you fix it?
 
-```
+## Write the Tests
 
-Output
+This server has no tests!
 
-```bash
-Get off my lawn!
-Get off my lawn!
-Get off my lawn!
-Get off my lawn!
-Clicked on the button: Test Button 1
-Clicked on the button: Test Button 2
-```
+## Deploy
