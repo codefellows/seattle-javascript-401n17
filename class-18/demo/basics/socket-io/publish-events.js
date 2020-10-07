@@ -3,19 +3,25 @@
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3000');
 
-// Server Namespace (area) to handle city-wide emergencies
-const emergency = io.connect('http://localhost:3000/emergency');
+const ds = io.connect('http://localhost:3000/digestive-system');
 
-// Server Namespace (area) to handle weather updates
-const weather = io.connect('http://localhost:3000/weather');
+const health = io.connect('http://localhost:3000/health-system');
 
-// No namespace, this goes to every client
-socket.emit('sunrise');
+// No namespace, these goes to every client
+socket.emit('light', { level: 45 });
+socket.emit('light', { level: 65 });
+socket.emit('light', { level: 90 });
 
-emergency.emit('crime', 'Break-In on 100th Avenue');
-emergency.emit('fire', 'Fishing boat on fire on Dock 74');
+socket.emit('smell', { scent: 'flowers' })
+socket.emit('smell', { scent: 'vomit' })
 
-weather.emit('rain');
-weather.emit('snow');
+// These only go to clients connected to the digestive-system
+ds.emit('swallow', 'Hot Dog');
+
+// these go to specific parts of the health system
+health.emit('cold', 'Common Cold');
+health.emit('flu', 'Covid');
+health.emit('sugar', 119);
+
 
 
