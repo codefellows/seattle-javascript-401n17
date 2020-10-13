@@ -12,7 +12,7 @@ sendMessage();
 function sendMessage() {
 
   const params = {
-    Message: `I am really thirsty!`,
+    Message: `I am buying the stick thing!`,
     TopicArn: process.env.SNS_TOPIC,
   };
 
