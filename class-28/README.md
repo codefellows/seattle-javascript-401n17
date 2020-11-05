@@ -1,6 +1,6 @@
-# Props and State
+# Component Composition
 
-Applications are comprised of many components, usually working together to perform a higher level task. As such, they'll all need access to state, methods to read/modify state, and an ability to respond to triggered actions in other, related components. Today, we'll explore how React applications do this, using JSX attributes, better known as `props`
+Apps written using a component framework such as React are generally composed of many components, assembled hierarchically to create a cohesive application. Components very often need to share state(data) and behaviors (methods). In addition to props and state, components can actually render other components as their children.
 
 ## Learning Objectives
 
@@ -8,15 +8,21 @@ Applications are comprised of many components, usually working together to perfo
 
 #### Describe and Define
 
-- Functions as properties/attributes
-- State (or parts of state) as properties/attributes
+- `props.children`
+- Composition vs Iteration
+- Routing to swap content
+- Routing to change page
 
 #### Execute
 
-- Pass props from a container component to a child
-- Execute methods in a parent component from a child
-- Manage state from events
-- Handle form input
+- Implement React Routing via `<BrowserRouter />`
+  - Page Level
+  - Component Swapping
+- Compose components hierarchically
+- Create logical wrapper components
+- Create functional wrapper components
+- Utilize `children` in composed components
+  - Compose the `<List>, <If>` Component
 
 ## Today's Outline
 
@@ -24,95 +30,99 @@ Applications are comprised of many components, usually working together to perfo
 
 ## Notes
 
-## Forms and Inputs
+### Component Composition - Logical
 
-React form elements maintain internal state. Think of React inputs as stateful child components. This means that we must manage the state of inputs through our own stateful component and one way data binding. The creation of a parent component (which we'll refer to as _form-container_), manages the state for all child components of the form and passes any necessary state down into it's inputs through the use of `props`. Each input has an `onChange` event that we can handle and use to update our _form-container's_ state each time the user interacts with an input.
-
-### Props
-
-Components accept arbitrary inputs called `props`. In JSX, props are passed into a component with a syntax that looks like HTML attributes. These are the equivalent of function params.
-
-In actuality, `props` is the name of the object passed into a component constructor and any prop added to a component in the JSX will be accessible as a property on `props`.
-
-After `props` is passed into the constructors `super` function, they are available on the context by using `this.props`.
-
-#### Props Example ... the way we get to use them
-
-``` javascript
-const element = (
-  <h1 className="greeting">
-    Hello, world!
-  </h1>
-);
-```
-
-#### Props -- what's actually happening under the hood
+In this setup, you are sending your child components the raw data and allowing them to render the output as they decide.
 
 ```javascript
 
-const element = React.createElement(
-  'h1',
-  {className: 'greeting'},
-  'Hello, world!'
-);
+// Dashboard Wrapper
+//  - feeds the SearchForm some methods
+//  - then feeds the results some data
+
+<Dashboard>
+  <SearchForm handler={this.doTheSearch} />
+  <Results data={this.state.results} />
+</Dashboard>
+
+// .. Results Component
+<ul>
+  {this.props.data.map( (item,i) => <li key={i}>{item}</li> );
+</ul>
+
+// Dashboard Component's render method:
+
+render() {
+  return props.children;
+}
 
 ```
 
-#### Props can be data or functions
+### Component Composition - Using Logic-less Children
 
-In javascript, we can pass functions around like variables. We've been doing this all along (named callback functions in express and jQuery for example).  Now we get to really harness that power!
+This is typically used when your `children` are already in JSX form (pre-rendered) and you need to display them as a whole.  A good example might be a gallery of images
 
-When this renders ...
-
-- Foo will draw Bar
-- Bar will draw a button
-- When that button gets clicked, it's `onClick` action fires
-  - That action runs the method `this.props.handleClick`
-  - That method runs in `<Foo>` ... `<Foo>` passed it down to `<Bar>` essentially telling it what it wants it to do.
-- This is a means of passing not only **Data** but **Behavior** down the component tree
-
-``` javascript
-
-class Foo extends React.Component {
-  constructor(props){
-    super(props)
+```javascript
+  function getListings() {
+    let listings = {this.state.results.map( (item,i) => <li key={i}>{item}</li> );
+    this.setState({listings})
   }
 
-  screamLoud() {
-    console.log("OUCH");
-  }
+  <SearchForm handler={this.doTheSearch} />
+  <Results>
+    { this.state.listings.map( listing => listing ) }
+  </Results>
 
-  render(){
-    return (
-      <div>
-        <Bar text="Click Me!" handleClick={this.screamLoud} />
-      </div>
-    )
-  }
-}
+// Results Component
 
-class Bar extends React.Component {
+<ul>
+  {this.props.children}
+</ul>
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    <div>
-      <button onClick={this.props.handleClick}>{props.text}</button>
-    </div>
-  }
-
-}
-
-// Render the element ...
-<Foo />
-
-// Outputs:
-
-<button>Click Me!</button>
 ```
 
-### One Way Data flow
+### Component Lifecycle
 
-State can only be passed from parent component to a child component through the use of `props`. This enforces the idea of one way data flow. One way data flow is a way of describing that state can only be passed down the component tree (not up). If a child wants to pass some data to a parent, the parent can pass a function to the child through `props` and the child may invoke that function and pass it data for the parent to manage.
+- Mounting: These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+  - constructor()
+  - static getDerivedStateFromProps()
+  - render()
+  - componentDidMount()
+- Updating: An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+  - static getDerivedStateFromProps()
+  - shouldComponentUpdate()
+  - render()
+  - getSnapshotBeforeUpdate()
+  - componentDidUpdate()
+
+### API Testing
+
+Setup a mock server to simulate (intercept) calls to your APIs and return the results you want your tests to see
+
+```javascript
+import React from 'react'
+import { setupServer } from 'msw/node'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+
+const server = setupServer(
+  rest.get('/greeting', (req, res, ctx) => {
+    return res(ctx.json({ greeting: 'hello there' }))
+  })
+)
+
+beforeAll(() => server.listen())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
+
+test('loads and displays greeting', async () => {
+  render(<Fetch url="/greeting" />)
+
+  fireEvent.click(screen.getByText('Load Greeting'))
+
+  await waitFor(() => screen.getByRole('heading'))
+
+  expect(screen.getByRole('heading')).toHaveTextContent('hello there')
+  expect(screen.getByRole('button')).toHaveAttribute('disabled')
+})
+```

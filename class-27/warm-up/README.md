@@ -1,78 +1,37 @@
-# Warm Up - Shredder Type Checking
+# Warm Up - Object Test
 
-Create a new shredder function to determine the type of a variable
+Does an object contain a value at some deeply nested property?
 
 ## Overview
 
-Javascript has a few disparate ways to determine what data type your variables represent
+Very often, you'll need to see if an object has a certain property
 
-- typeof
-- instanceof
-- Object.constructor
-- Array.isArray()
+i.e. `if(person.name) { ... }`
 
-## Challenge 1: `$$.whatIs(thing)`
-
-Write a new function for shredder that takes a single argument (a variable) and returns the correct datatype
-
-- object
-- array
-- string
-- boolean
-- function
+If an object is undefined, or doesn't have a "deeply nested" property, you'll run into an error.
 
 ```javascript
-let name = "john";
-$$.whatIs(name); // string
-
-let weather = {
-  hot: true,
-  humid: false
+let person = {
+  age: 50,
+  hair: false
 }
-$$.whatIs(weather); // object
 
-// Yes, arrays are really objects, but the spirit of the .is() is to get "real"
-let dogs = ['rosie','kali'];
-$$.whatIs(dogs); // array
+if ( person.spouse.name ) { ... }
 
-// Custom Consructors
-function Person(name) {
-  this.name=name;
-}
-let nancy = new Person('Nancy');
-
-$$.whatIs(nancy); // object
+// ERROR: TypeError: Cannot read property 'name' of undefined
 ```
 
-## Challenge 2: `$$.is(thing, type)`
+## Challenge: `$$.has()`
 
-Write a new function for shredder that takes 2 arguments: a variable, and a data type
-
-Return a boolean indicating whether or not the variable is actually of the type specified
-
-> Note: this function should also be aware of custom classes.
+Write a method in the Shredder library called `.has()` that can find a property of an object and return a boolean if it is there. This does not make an assertion of the value itself, only the presence of the key in the object
 
 ```javascript
-let name = "john";
-$$.is(name, 'string'); // true
-
-let weather = {
-  hot: true,
-  humid: false
+let person = {
+  age: 50,
+  hair: false
 }
-$$.is(weather, 'object'); // true
 
-// Yes, arrays are really objects, but the spirit of the .is() is to get "real"
-let dogs = ['rosie','kali'];
-$$.is(dogs,'array'); // true
-$$.is(dogs,'object'); // false
+let hasSpouse = $$.has(person, 'spouse.name'); // false
 
-// Custom Consructors
-function Person(name) {
-  this.name=name;
-}
-let nancy = new Person('Nancy');
-
-$$.is(nancy, 'Person'); // true
-$$.is(nancy, 'object'); // true
+let hasHair = $$.has(person, 'hair'); // true
 ```
