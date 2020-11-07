@@ -22,8 +22,8 @@ class Form extends React.Component {
   render() {
     return (
       <> {/* this is the <Form /> or C3 from our drawing */}
-        <form onSubmit={this.handleSubmit}>
-          <input type="number" name="amount" onChange={this.handleChange} />
+        <form data-testid="spendForm" onSubmit={this.handleSubmit}>
+          <input data-testid="moneyInput" type="number" name="amount" onChange={this.handleChange} />
           <button type="submit">Buy Something, You have {this.props.balance} remaining</button>
         </form>
       </>

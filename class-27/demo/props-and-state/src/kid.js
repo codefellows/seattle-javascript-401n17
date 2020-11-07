@@ -7,7 +7,7 @@ class Kid extends React.Component {
   render() {
     return (
       <> {/* this is the <Kid />  or C1 from our drawing */}
-        <h2>{this.props.name} Component</h2>
+        <h2 data-testid="kidName">{this.props.name} Component</h2>
         <Form spend={this.props.spend} balance={this.props.balance} />
       </>
     )

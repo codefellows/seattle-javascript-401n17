@@ -1,7 +1,6 @@
 import React from 'react';
 
 import superagent from 'superagent';
-import AwesomeJSON from 'wherver';
 
 class People extends React.Component {
 
@@ -10,7 +9,8 @@ class People extends React.Component {
     this.state = {
       fetching: false,
       people: [],
-      pets: ['Rocky', 'Malcom']
+      pets: ['Rocky', 'Malcom'],
+      number: this.props.number
     }
   }
 
@@ -24,6 +24,7 @@ class People extends React.Component {
   render() {
     return (
       <>
+      <h2>{this.state.number}</h2>
       {this.state.fetching ? <div>Getting people ....</div> : ''}
       <ul>
         {

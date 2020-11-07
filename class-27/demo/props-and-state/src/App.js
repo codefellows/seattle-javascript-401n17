@@ -21,11 +21,11 @@ class App extends React.Component {
   render() {
     return(
       <> {/* this is the <App /> */}
-        <h1>Bank Balance Is: ${this.state.balance}</h1>
+        <h1 data-testid="balanceHeader">Bank Balance Is: ${this.state.balance}</h1>
         <hr />
         <Kid spend={this.withdraw} name="Zach" balance={this.state.balance} />
         <hr />
-        <People />
+        <People number={12} />
       </>
     )
   }
