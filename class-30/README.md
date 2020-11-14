@@ -4,14 +4,16 @@ Recap module 5 concepts and dive into DS&A by implementing a new Data Structure
 
 ## Learning Objectives
 
-### Students will be able to
-
 #### Describe and Define
 
-- Data Structure Implementation -  <!-- To Be Completed By Instructor -->
+- Hashmaps!
 
 #### Execute
 
-## Today's Outline
+## Front Row Tab Times
 
-<!-- To Be Completed By Instructor -->
+6:50 - Build it out
+7:00 - Build up hash(key)
+7:03 - Build set(key, Val)
+7:16 - Viewed in the browser (easy to see object formatted code in the browser console)
+7:28 - Use case?
