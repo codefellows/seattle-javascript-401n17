@@ -1,0 +1,24 @@
+header {
+  background: #111;
+  color: #fff;
+}
+
+nav ul {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+nav ul li {
+  padding: 0.25em 1em;
+}
+nav a {
+  color: #fff;
+}
+
+nav a.active {
+  color: red;
+}
+
+footer {
+  background: green;
+}
