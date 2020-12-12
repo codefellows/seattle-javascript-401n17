@@ -1,0 +1,10 @@
+@mixin borders(radius) {
+  border-radius: $radius;
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  -msie-border-radius:$radius
+}
+div {
+  border: 1px solid black;
+  @include borders(5px);
+}
