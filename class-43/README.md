@@ -24,6 +24,14 @@ React is great, but there are negative implications with regards to SEO (Search 
 
 ## Notes
 
+## JS Front End Frameworks
+
+- [Vue](https://vuejs.org/)
+- [Angular](https://angular.io/)
+- [Svelte](https://svelte.dev/)
+
+## React Frameworks
+
 ### Gatsby Basics
 
 [Gatsby](https://www.gatsbyjs.com/)
